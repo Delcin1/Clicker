@@ -11,4 +11,6 @@ public class ShopItemSO : ScriptableObject
     public int baseCost;
     public RenderTexture tex;
     public VideoClip videoClip;
+    public int coinPerSec;
+    public int coinPerClick;
 }

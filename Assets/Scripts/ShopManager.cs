@@ -5,22 +5,21 @@ using TMPro;
 
 public class ShopManager : MonoBehaviour
 {
+    public GameManager gm;
     public int coins;
     public TMP_Text coinsText;
     public ShopItemSO[] shopItemsSO;
     public ShopTemplate[] shopPanels;
 
-    // Start is called before the first frame update
     void Start()
     {
-        coinsText.text = "Coins: " + coins.ToString();
         LoadPanels();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        coins = PlayerPrefs.GetInt("score");
+        coinsText.text = "Монетки: " + coins.ToString();
     }
 
     public void LoadPanels()
@@ -29,10 +28,14 @@ public class ShopManager : MonoBehaviour
         {
             shopPanels[i].title.text = shopItemsSO[i].title;
             shopPanels[i].description.text = shopItemsSO[i].description;
-            shopPanels[i].cost.text = "Coins: " + shopItemsSO[i].baseCost.ToString();
+            shopPanels[i].costText.text = "Монетки: " + shopItemsSO[i].baseCost.ToString();
+            shopPanels[i].cost = shopItemsSO[i].baseCost;
+            shopPanels[i].coinPerSec = shopItemsSO[i].coinPerSec;
+            shopPanels[i].coinPerClick = shopItemsSO[i].coinPerClick;
             shopPanels[i].videoPlayer.targetTexture = shopItemsSO[i].tex;
             shopPanels[i].videoPlayer.clip = shopItemsSO[i].videoClip;
             shopPanels[i].rawImage.texture = shopItemsSO[i].tex;
+            shopPanels[i].gm = gm;
         }
     }
 }

@@ -18,3 +18,5 @@ MonoBehaviour:
   baseCost: 1500
   tex: {fileID: 8400000, guid: 7d8011e6f5379d343a5ba5ec3d7adb93, type: 2}
   videoClip: {fileID: 32900000, guid: 5fffdbccc1ad795478693bc8c66c0160, type: 3}
+  coinPerSec: 0
+  coinPerClick: 15
