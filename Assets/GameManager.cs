@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private int score;
-    [SerializeField] private Text scoreText;
+    [SerializeField] private TMP_Text scoreText;
 
     void Update()
     {
